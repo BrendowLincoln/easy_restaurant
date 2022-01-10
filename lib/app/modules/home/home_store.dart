@@ -8,7 +8,13 @@ abstract class HomeStoreBase with Store {
   @observable
   int counter = 0;
 
-  Future<void> increment() async {
+  @action
+  void increment() {
     counter = counter + 1;
+  }
+
+  @action
+  void decrement() {
+    counter = counter - 1;
   }
 }

@@ -23,6 +23,10 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              'Count of taps',
+              style: Theme.of(context).textTheme.headline5,
+            ),
             Observer(
               builder: (context) => Text(
                 '${store.counter}',
@@ -32,11 +36,25 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          store.increment();
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: FloatingActionButton(
+              onPressed: () {
+                store.decrement();
+              },
+              child: Icon(Icons.remove),
+            ),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              store.increment();
+            },
+            child: Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }

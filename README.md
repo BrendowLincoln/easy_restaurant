@@ -1,4 +1,4 @@
-# easy_restaurant
+# EASYRESTAURANT
 
 A new Flutter project.
 
