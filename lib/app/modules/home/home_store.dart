@@ -11,6 +11,7 @@ abstract class HomeStoreBase with Store {
   @action
   void increment() {
     counter = counter + 1;
+    print(counter);
   }
 
   @action

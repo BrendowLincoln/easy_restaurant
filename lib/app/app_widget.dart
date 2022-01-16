@@ -8,6 +8,10 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Slidy',
       theme: ThemeData.dark(),
+      darkTheme: ThemeData(
+          primaryColor: const Color(0xFF69F0AE),
+          colorScheme:
+              ColorScheme.fromSwatch(accentColor: const Color(0xFF303030))),
     ).modular();
   }
 }

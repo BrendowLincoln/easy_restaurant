@@ -15,46 +15,46 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends ModularState<HomePage, HomeStore> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Counter'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Count of taps',
-              style: Theme.of(context).textTheme.headline5,
-            ),
-            Observer(
-              builder: (context) => Text(
-                '${store.counter}',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        drawer: const Drawer(),
+        appBar: AppBar(
+          title: RichText(
+              textScaleFactor: 1.4,
+              text: TextSpan(
+                  text: 'EASY',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: 'RESTAURANT',
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.secondary,
+                            fontWeight: FontWeight.bold))
+                  ])),
         ),
-      ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: FloatingActionButton(
-              onPressed: () {
-                store.decrement();
-              },
-              child: Icon(Icons.remove),
-            ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Count of taps',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+              Observer(
+                builder: (context) => Text(
+                  '${store.counter}',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+              ),
+            ],
           ),
-          FloatingActionButton(
-            onPressed: () {
-              store.increment();
-            },
-            child: Icon(Icons.add),
-          ),
-        ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            store.increment();
+          },
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
