@@ -19,18 +19,10 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
       child: Scaffold(
         drawer: const Drawer(),
         appBar: AppBar(
-          title: RichText(
-              textScaleFactor: 1.4,
-              text: TextSpan(
-                  text: 'EASY',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'RESTAURANT',
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                            fontWeight: FontWeight.bold))
-                  ])),
+          title: Image.asset(
+            'assets/images/logo.png',
+            width: MediaQuery.of(context).size.width * 0.4,
+          ),
         ),
         body: Center(
           child: Column(
@@ -50,6 +42,7 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Theme.of(context).colorScheme.primary,
           onPressed: () {
             store.increment();
           },
