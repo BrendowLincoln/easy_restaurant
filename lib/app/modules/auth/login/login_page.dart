@@ -1,9 +1,10 @@
-import 'package:easy_restaurant/app/modules/auth/auth_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'login_store.dart';
+
 class LoginPage extends StatefulWidget {
-  final store = Modular.get<AuthStore>();
+  final store = Modular.get<LoginStore>();
 
   LoginPage({Key? key}) : super(key: key);
   @override
@@ -35,14 +36,14 @@ class LoginPageState extends State<LoginPage> {
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: 20.0, horizontal: 10.0),
                             hintText: 'Usuário',
-                            hintStyle: TextStyle(color: Colors.white),
+                            hintStyle: const TextStyle(color: Colors.white),
                             focusColor: Theme.of(context).colorScheme.primary,
                             filled: true,
                             fillColor: Colors.white54.withOpacity(0.2),
-                            border: UnderlineInputBorder(
+                            border: const UnderlineInputBorder(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(5.0),
                                     topRight: Radius.circular(5.0))),
@@ -50,14 +51,14 @@ class LoginPageState extends State<LoginPage> {
                         ),
                         TextFormField(
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: 20.0, horizontal: 10.0),
                             hintText: 'Senha',
-                            hintStyle: TextStyle(color: Colors.white),
+                            hintStyle: const TextStyle(color: Colors.white),
                             focusColor: Theme.of(context).colorScheme.secondary,
                             filled: true,
                             fillColor: Colors.white54.withOpacity(0.2),
-                            border: UnderlineInputBorder(
+                            border: const UnderlineInputBorder(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(4.0),
                                     topRight: Radius.circular(4.0))),
@@ -67,17 +68,17 @@ class LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             GestureDetector(
-                              child: Text('Esqueceu sua senha?'),
+                              child: const Text('Esqueceu sua senha?'),
                               onTap: () {},
                             ),
                           ],
                         ),
-                        SizedBox(height: 10.0),
+                        const SizedBox(height: 10.0),
                         Container(
                           width: MediaQuery.of(context).size.width * 0.5,
                           height: 50,
                           child: ElevatedButton(
-                            child: Text(
+                            child: const Text(
                               'Login',
                               style: TextStyle(fontSize: 16),
                             ),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_store.dart';
+part of 'login_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'auth_store.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$AuthStore on _AuthStoreBase, Store {
-  final _$valueAtom = Atom(name: '_AuthStoreBase.value');
+mixin _$LoginStore on _LoginStoreBase, Store {
+  final _$valueAtom = Atom(name: '_LoginStoreBase.value');
 
   @override
   int get value {
@@ -24,17 +24,17 @@ mixin _$AuthStore on _AuthStoreBase, Store {
     });
   }
 
-  final _$_AuthStoreBaseActionController =
-      ActionController(name: '_AuthStoreBase');
+  final _$_LoginStoreBaseActionController =
+      ActionController(name: '_LoginStoreBase');
 
   @override
   void increment() {
-    final _$actionInfo = _$_AuthStoreBaseActionController.startAction(
-        name: '_AuthStoreBase.increment');
+    final _$actionInfo = _$_LoginStoreBaseActionController.startAction(
+        name: '_LoginStoreBase.increment');
     try {
       return super.increment();
     } finally {
-      _$_AuthStoreBaseActionController.endAction(_$actionInfo);
+      _$_LoginStoreBaseActionController.endAction(_$actionInfo);
     }
   }
 

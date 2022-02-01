@@ -10,8 +10,10 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
           colorScheme: const ColorScheme.dark(
         primary: Color(0xFF69F0AE),
-        secondary: Colors.amber,
+        secondaryVariant: Color(0xFF69F0AE),
+        secondary: Color(0xFF69F0AE),
         brightness: Brightness.dark,
+        primaryVariant: Color(0xFF69F0AE),
         background: Color(0xFF303030),
       )),
     ).modular();

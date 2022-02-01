@@ -9,18 +9,18 @@ part of 'home_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$HomeStore on HomeStoreBase, Store {
-  final _$counterAtom = Atom(name: 'HomeStoreBase.counter');
+  final _$currentPageAtom = Atom(name: 'HomeStoreBase.currentPage');
 
   @override
-  int get counter {
-    _$counterAtom.reportRead();
-    return super.counter;
+  int get currentPage {
+    _$currentPageAtom.reportRead();
+    return super.currentPage;
   }
 
   @override
-  set counter(int value) {
-    _$counterAtom.reportWrite(value, super.counter, () {
-      super.counter = value;
+  set currentPage(int value) {
+    _$currentPageAtom.reportWrite(value, super.currentPage, () {
+      super.currentPage = value;
     });
   }
 
@@ -28,22 +28,11 @@ mixin _$HomeStore on HomeStoreBase, Store {
       ActionController(name: 'HomeStoreBase');
 
   @override
-  void increment() {
+  void changePage(int selectedPage) {
     final _$actionInfo = _$HomeStoreBaseActionController.startAction(
-        name: 'HomeStoreBase.increment');
+        name: 'HomeStoreBase.changePage');
     try {
-      return super.increment();
-    } finally {
-      _$HomeStoreBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void decrement() {
-    final _$actionInfo = _$HomeStoreBaseActionController.startAction(
-        name: 'HomeStoreBase.decrement');
-    try {
-      return super.decrement();
+      return super.changePage(selectedPage);
     } finally {
       _$HomeStoreBaseActionController.endAction(_$actionInfo);
     }
@@ -52,7 +41,7 @@ mixin _$HomeStore on HomeStoreBase, Store {
   @override
   String toString() {
     return '''
-counter: ${counter}
+currentPage: ${currentPage}
     ''';
   }
 }
